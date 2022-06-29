@@ -1,0 +1,21 @@
+#!/bin/bash 
+
+# Check where is command git
+git_path=`which git`
+
+# Start to deal the set dir
+dir="/home/urenat/repo_otus/otus_hp_git" 
+ 
+
+echo "Start to execute this script." 2>&1
+
+for every_dir in ${dir[@]} 
+do 
+    cd ${every_dir}
+    work_dir=`pwd`
+    echo "---------------------------------" 2>&1
+    echo "Start to deal" ${work_dir} 2>&1
+    ${git_path} pull
+    echo "---------------------------------" 2>&1
+done
+
